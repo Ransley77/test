@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nusantara Indah</title>
+    <link rel="icon" href="icon.jpeg">
+    <link rel="stylesheet" href="design.css">
+</head>
+<body>
+
+    <div class="navbar-icon" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+    </div>
+
+    <div class="sidebar" id="sidebar">
+        <a href="#">Home</a>
+        <a href="#">Gallery</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <header>Jelajah Nusantara: Bali & Keindahan Abadi</header>
+
+    <div class="scene">
+        
+        <div class="nav-wrapper prev-wrapper">
+            <img src="ombak-kiri-baru.png" class="wave-img" alt="">
+            <button class="nav-btn" onclick="animasiKlik(this); moveSlide(-1)">❮</button>
+        </div>
+
+        <div class="center-container" onclick="bukaCard()" title="Klik untuk Masuk">
+            <div class="image-holder" id="image-holder">
+                <img id="img-display" src="download.png" alt="Display">
+            </div>
+        </div>
+
+        <div class="nav-wrapper next-wrapper">
+            <img src="ombak-kanan-baru.png" class="wave-img" alt="">
+            <button class="nav-btn" onclick="animasiKlik(this); moveSlide(1)">❯</button>
+        </div>
+
+    </div>
+
+    <div class="info-box">
+        <h1 id="txt-title">INDONESIA</h1>
+        <p id="txt-desc">Klik gambar untuk masuk ke detail.</p>
+    </div>
+
+    <div class="overlay" id="card-overlay">
+        <div class="overlay-header">
+            <span class="overlay-title" id="overlay-title">JUDUL</span>
+            <button class="close-btn" onclick="tutupCard()">KELUAR ✕</button>
+        </div>
+        
+        <div class="menu-grid" id="menu-grid"></div>
+        
+        <div class="detail-view" id="detail-view">
+            <div class="detail-left">
+                <div class="back-btn" onclick="backToMenu()">❮ Kembali</div>
+                <img id="detail-img" src="" alt="Detail">
+            </div>
+            <div class="detail-right">
+                <h2 id="detail-title">Judul</h2>
+                <div class="text-content"><p id="detail-desc">Deskripsi...</p></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <h6 style="text-align: center; color: white; font-weight: normal; margin-bottom: 10px; font-size: 12px;">2026 UCCD StillLearning Project</h6>
+    </footer>
+
+    <script src="edit.js"></script>
+
+    <script>
+        function animasiKlik(btn) {
+            btn.classList.add('clicked');
+            setTimeout(() => { btn.classList.remove('clicked'); }, 500);
+        }
+    </script>
+</body>
+</html>
